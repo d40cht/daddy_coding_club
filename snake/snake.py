@@ -5,9 +5,9 @@ from pygame.locals import (
 )
 import random
 
-WIDTH = 50
-HEIGHT = 26
-SIZE = 16
+WIDTH = 64
+HEIGHT = 40
+SIZE = 20 
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -44,6 +44,9 @@ def loop(screen, font, key_events, snake, apple):
   pygame.draw.circle(screen, GREEN, [
     apple.x * SIZE + SIZE/2, 
     apple.y * SIZE + SIZE/2], 8)
+
+  # TODO: Add code here to check whether the snake has eaten the apple and
+  #       if so, increment the score and move the apple to a new place.
 
   # Draw the score.
   text_surface = font.render('Score: %d' % snake.score, False, BLACK)
