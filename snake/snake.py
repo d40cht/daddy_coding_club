@@ -42,8 +42,8 @@ def loop(screen, font, key_events, snake, apple):
 
   # Draw the apple.
   pygame.draw.circle(screen, GREEN, [
-    apple.x * SIZE + SIZE/2, 
-    apple.y * SIZE + SIZE/2], 8)
+    apple.x * SIZE + SIZE//2, 
+    apple.y * SIZE + SIZE//2], 8)
 
   # TODO: Add code here to check whether the snake has eaten the apple and
   #       if so, increment the score and move the apple to a new place.
@@ -68,7 +68,7 @@ def run():
   font = pygame.font.SysFont('Arial', 20)
 
   # Make a snake.
-  snake = Snake(WIDTH/2, HEIGHT/2)
+  snake = Snake(WIDTH//2, HEIGHT//2)
 
   apple = Apple(random.randint(0, WIDTH-1), random.randint(0, HEIGHT-1))
 
@@ -79,8 +79,9 @@ def run():
     # Extract the key events.
     key_events = set([e.key for e in events if e.type == KEYDOWN])
 
-    if e.type == QUIT:
-      return
+    for e in events:
+      if e.type == QUIT:
+        return
 
     # Update the screen.
     loop(screen, font, key_events, snake, apple)
