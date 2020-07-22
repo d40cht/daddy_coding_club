@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 m = 1200
 n = 800
 
-if False:
+if True:
   x_span = (-2, 1)
   y_span = (-1, 1)
 else:
